@@ -26,6 +26,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'semantic-ui-sass'
 #jquery gem
 gem 'jquery-rails'
+#bcrypt for security if passwords
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+#hirb for better view of rails console
+gem 'hirb'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
