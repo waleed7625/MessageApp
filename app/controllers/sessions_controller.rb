@@ -9,11 +9,13 @@ class SessionsController < ApplicationController
     flash[:success] = "you have sucessfully logged in"
     redirect_to  root_path
     elsif user && !user.authenticate(params[:session][:password])
-    flash.now[:error] = "please enter your password"
-    render 'new'
-    else  
-      flash.now[:error] = "your username or password is not correct please try again"
+      flash.now[:warning] = "your username or password is not correct please try again"
       render 'new'
+    elsif !user || !user.authenticate(params[:session][:password])
+      flash.now[:error] = "please enter your password and username both"
+      render 'new'
+    else
+      flash.now[:purple] = "something went wrong try again!"
     end
   end
 
