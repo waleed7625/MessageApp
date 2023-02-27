@@ -1,29 +1,22 @@
 <div class="ui small inverted menu">
-    <div class="ui container">
-      <a class="item" href="/">
-        Chatroom
-      </a>
-      <a class="item">
-        Messages
-      </a>
-      <div class="right menu">
-        <div class="ui dropdown item">
-          Language <i class="dropdown icon"></i>
-          <div class="menu">
-            <% if logged_in? %>
-            <%= link_to "logout", logout_path, class: "item", method: :delete %>
-            <%else%>
-             <%= link_to "login", login_path, class: "item" %>
-            <a class="item">Sign up</a>
-            <%end%>
-          </div>
-        </div>
-        <div class="item">
-          <% if !logged_in? %>
-          <%= link_to "login", login_path, class: "ui primary button" %>
+  <div class="ui container">
+    <a class="item" href="/"> Chatroom </a>
+    <a class="item"> Messages </a>
+    <div class="right menu">
+      <div class="ui dropdown item">
+        Account <i class="dropdown icon"></i>
+        <div class="menu">
+          <% if logged_in? %> <%= link_to "logout", logout_path, class: "item",
+          method: :delete %> <%else%> <%= link_to "login", login_path, class:
+          "item" %>
+          <a class="item">Sign up</a>
           <%end%>
-          </div>
-         
         </div>
+      </div>
+      <div class="item">
+        <% if !logged_in? %> <%= link_to "login", login_path, class: "ui primary
+        button" %> <%end%>
+      </div>
+    </div>
   </div>
 </div>
