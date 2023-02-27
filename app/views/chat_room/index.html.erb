@@ -10,14 +10,16 @@
         <div class="ui feed"><%= render @messages %></div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
-          <div class="field">
-            <div class="ui fluid icon input">
-              <input type="text" placeholder="Enter a message..." />
-              <i class="bordered inverted blue edit icon"></i>
-            </div>
+        <%= form_for(@message, html: { class: "ui reply form", role: "form" },
+        url: message_path) do |f| %>
+        <div class="field">
+          <div class="ui fluid icon input">
+            <%= f.text_field :body %> <%= f.button '<i
+              class="bordered inverted blue edit icon"></i
+            >'.html_safe %>
           </div>
-        </form>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
