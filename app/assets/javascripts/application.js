@@ -22,6 +22,16 @@ scroll_bottom = function () {
     $("#messages").scrollTop($("#messages")[0].scrollHeight);
   }
 };
+submit_message = function () {
+  $("#message_body").on("keydown", function (e) {
+    var messVal = $("#message_body").val();
+    if (e.keyCode == 13 && messVal !== "") {
+      e.preventDefault();
+      $("button").click();
+      e.target.value = "";
+    }
+  });
+};
 
 $(document).on("turbolinks:load", function () {
   $(".ui.dropdown").dropdown();
@@ -29,5 +39,6 @@ $(document).on("turbolinks:load", function () {
   $(".message .close").on("click", function () {
     $(this).closest(".message").transition("fade");
   });
+  submit_message();
   scroll_bottom();
 });
