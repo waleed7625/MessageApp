@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
   def user_create
     @user = User.new(user_params)
-    pass = @user.password
+    pass = params[:user][:password]
     pass_digest = BCrypt::Password.create(pass)
     @user.update(password_digest: pass_digest)
     if @user.valid?

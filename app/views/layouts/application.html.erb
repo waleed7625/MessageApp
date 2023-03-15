@@ -2,19 +2,16 @@
 <html>
   <head>
     <title>MessagesApp</title>
-    <%= favicon_link_tag %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag %> <%= csrf_meta_tags %> <%= csp_meta_tag %> <%=
+    stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track':
+    'reload' %> <%= javascript_include_tag 'application',
+    'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render  '/partials/menu' %>
+    <%= render '/partials/menu' %>
     <div class="ui container">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+      <%= render 'layouts/messages' %> <%= yield %>
     </div>
   </body>
 </html>
