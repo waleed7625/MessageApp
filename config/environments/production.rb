@@ -91,4 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_cable.allowed_request_origins = ['https://your-messages.herokuapp.com', 'http://your-messages.herokuapp.com']
+  config.action_cable.url = "wss://your-messages.herokuapp.com/cable"
 end
