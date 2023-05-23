@@ -52,3 +52,4 @@ production:
   database: MessagesApp_production
   username: MessagesApp
   password: <%= ENV['MESSAGESAPP_DATABASE_PASSWORD'] %>
+  host: localhost
